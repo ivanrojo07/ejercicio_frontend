@@ -1,0 +1,135 @@
+<div class="card">
+    <div class="card-header">
+        {{nave['nombre']}}
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4 mt-2 mb-2">
+                <label for="">Nombre:</label>
+                <span class="form-control bg-light text-center">
+                    {{nave['nombre']}}
+                </span>
+            </div>
+            <div class="col-4 mt-2 mb-2">
+                <label for="">Modelo:</label>
+                <span class="form-control bg-light text-center">
+                    {{nave['modelo']}}
+                </span>
+            </div>
+            <div class="col-4 mt-2 mb-2">
+                <label for="">Manufacturera:</label>
+                <span class="form-control bg-light text-center">
+                    {{nave['manufacturera']}}
+                </span>
+            </div>
+            <div class="col-4 mt-2 mb-2">
+                <label for="">Precio:</label>
+                <span class="form-control bg-light text-center">
+                    ${{nave['precio']}}
+                </span>
+            </div>
+            <div class="col-4 mt-2 mb-2">
+                <label for="">Longitud:</label>
+                <span class="form-control bg-light text-center">
+                    {{nave['longitud']}}
+                </span>
+            </div>
+            <div class="col-4 mt-2 mb-2">
+                <label for="">Velocidad Maxima:</label>
+                <span class="form-control bg-light text-center">
+                    {{nave['velocidad_maxima']}}
+                </span>
+            </div>
+            <div class="col-4 mt-2 mb-2">
+                <label for="">Equipo:</label>
+                <span class="form-control bg-light text-center">
+                    {{nave['equipo']}}
+                </span>
+            </div>
+            <div class="col-4 mt-2 mb-2">
+                <label for="">No. de pasajeros:</label>
+                <span class="form-control bg-light text-center">
+                    {{nave['pasajeros']}}
+                </span>
+            </div>
+            <div class="col-4 mt-2 mb-2">
+                <label for="">Capacidad de carga:</label>
+                <span class="form-control bg-light text-center">
+                    {{nave['capacidad_carga']}}
+                </span>
+            </div>
+            <div class="col-4 mt-2 mb-2">
+                <label for="">Consumibles:</label>
+                <span class="form-control bg-light text-center">
+                    {{nave['consumibles']}}
+                </span>
+            </div>
+            <div class="col-4 mt-2 mb-2">
+                <label for="">HiperImpulso:</label>
+                <span class="form-control bg-light text-center">
+                    {{nave['hiperimpulso']}}
+                </span>
+            </div>
+            <div class="col-4 mt-2 mb-2">
+                <label for="">MGLT:</label>
+                <span class="form-control bg-light text-center">
+                    {{nave['MGLT']}}
+                </span>
+            </div>
+            <div class="col-4 mt-2 mb-2">
+                <label for="">Clase:</label>
+                <span class="form-control bg-light text-center">
+                    {{nave['clase']}}
+                </span>
+            </div>
+        </div>
+        
+    </div>
+    <div class="card-footer">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
+            Guardar nave
+        </button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Guardar nave</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form #f="ngForm" (ngSubmit)="f.form.valid">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-4 mt-2 mb-2">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre de la nave"
+                                [(ngModel)]="nombreInput" required>
+                        </div>
+                        <div class="col-4 mt-2 mb-2">
+                            <label for="modelo">Modelo:</label>
+                            <input type="text" class="form-control" name="modelo" placeholder="Modelo de la nave"
+                                [(ngModel)]="modeloInput">
+                        </div>
+                        <div class="col-4 mt-2 mb-2">
+                            <label for="velocidad">Velocidad:</label>
+                            <input type="number" class="form-control" name="velocidad"
+                                placeholder="Velocidad de la nave" [(ngModel)]="velocidadInput">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" (click)="onGuardar()" data-dismiss="modal" class="btn btn-primary">Guardar
+                        cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Modelo</th>
+      <th scope="col">Manufacturera</th>
+      <th scope="col">Clase</th>
+      <th scope="col">Velocidad Máxima</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let nave of naves">
+        <th scope="row">{{nave.id}}</th>
+        <td>{{nave.nombre}}</td>
+        <td>{{nave.modelo}}</td>
+        <td>{{nave.manufacturera}}</td>
+        <td>{{nave.clase}}</td>
+        <td>{{nave.velocidad_maxima}}</td>
+        <td><a [routerLink]="['/naves',nave.id]" class="btn btn-success">Más Información</a></td>
+    </tr>
+  </tbody>
+</table>
